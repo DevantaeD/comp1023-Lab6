@@ -1,8 +1,7 @@
 name: Run Node.js Script
 on:
 push:
-branches:
--main
+branches: -main
 
 jobs:
 run-script:
@@ -13,9 +12,8 @@ steps:
 uses: actions/checkout@v4
 
 -name: Set up Node.js
-uses: actions/setup-node@v4
-with:
-node-version: '24'
+uses: actions/setup-node@v4 
+with: node-version: '24'
 
 -name: Run Node.js Script
 run: node system-info.js
